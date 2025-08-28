@@ -13,6 +13,11 @@ epoch = "latest"
 passes = ["check_checker"]
 check_checker = { trusted_sender = false, trusted_caller = false, callee_filter = false }
 
+# Testnet configuration for console
+[repl.testnet]
+stacks_node_rpc_address = "https://api.testnet.hiro.so"
+bitcoin_node_rpc_address = "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+
 # Check-checker settings:
 # trusted_sender: if true, inputs are trusted after tx_sender has been checked.
 # trusted_caller: if true, inputs are trusted after contract-caller has been checked.

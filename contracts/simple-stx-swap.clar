@@ -33,15 +33,16 @@
     (let (
         (stx-amount (/ sbtc-amount SWAP_RATE))
         (user-sbtc-balance (get-sbtc-balance tx-sender))
+        (user tx-sender)
     )
         (asserts! (> sbtc-amount u0) ERR_INVALID_AMOUNT)
         (asserts! (>= user-sbtc-balance sbtc-amount) ERR_INSUFFICIENT_BALANCE)
         
         ;; Deduct sBTC from user
-        (map-set sbtc-balances tx-sender (- user-sbtc-balance sbtc-amount))
+        (map-set sbtc-balances user (- user-sbtc-balance sbtc-amount))
         
-        ;; Transfer STX back to user
-        (try! (as-contract (stx-transfer? stx-amount tx-sender tx-sender)))
+        ;; Transfer STX back to user from contract
+        (try! (as-contract (stx-transfer? stx-amount tx-sender user)))
         
         (ok stx-amount)
     )

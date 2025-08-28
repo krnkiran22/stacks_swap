@@ -11,7 +11,7 @@ plan:
         - contract-publish:
             contract-name: simple-stx-swap
             expected-sender: ST2ZGZXG4030P1RNEAYP2NTP6JYETW4V634A2G608
-            cost: 18030
+            cost: 18320
             path: contracts/simple-stx-swap.clar
             anchor-block-only: true
             clarity-version: 3

@@ -1,0 +1,1 @@
+curl -X POST "https://api.testnet.hiro.so/v2/contracts/call-read/ST2ZGZXG4030P1RNEAYP2NTP6JYETW4V634A2G608/simple-stx-swap/get-swap-rate" -H "Content-Type: application/json" -d '{"sender":"ST2ZGZXG4030P1RNEAYP2NTP6JYETW4V634A2G608","arguments":[]}'
