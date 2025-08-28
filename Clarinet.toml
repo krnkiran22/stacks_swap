@@ -1,28 +1,13 @@
 [project]
 name = "my-swap-project"
-description = "Simple token swap project based on StackSwap"
+description = "Simple STX to sBTC swap project"
 authors = []
 telemetry = true
 cache_dir = "./.cache"
 
-[contracts.sip-010-trait]
-path = "contracts/sip-010-trait.clar"
+[contracts.simple-stx-swap]
+path = "contracts/simple-stx-swap.clar"
 epoch = "latest"
-
-[contracts.test-token-a]
-path = "contracts/test-token-a.clar"
-epoch = "latest"
-depends_on = ["sip-010-trait"]
-
-[contracts.test-token-b]
-path = "contracts/test-token-b.clar"
-epoch = "latest"
-depends_on = ["sip-010-trait"]
-
-[contracts.simple-swap]
-path = "contracts/simple-swap.clar"
-epoch = "latest"
-depends_on = ["sip-010-trait"]
 
 [repl.analysis]
 passes = ["check_checker"]
